@@ -8,8 +8,10 @@ const stylus = require('gulp-stylus');
 const nib = require('nib');
 
 const config = {
-	src: 'src',
-	dist: 'htdocs/f'
+	path: {
+		src: 'src',
+		dist: 'htdocs/f'
+	}
 };
 
 const Tasks = {
@@ -28,12 +30,16 @@ const Tasks = {
 		done();
 	},
 	taskCss (done) {
+		const cssSrc = gulp.src('src/stylus/main.styl');
 		gulp.src('src/stylus/main.styl')
 			.pipe(plumber())
 			.pipe(stylus({
 				use:[nib()]
 			}))
-			.pipe(gulp.dest(config.dist + '/css'));
+			.pipe(gulp.dest(config.path.dist + '/css'))
+			.on('finish', () => {
+				Tasks.logMsg('css');
+			});
 
 		gulp.src('src/stylus/main.styl')
 			.pipe(stylus({
@@ -41,9 +47,9 @@ const Tasks = {
 				compress: true
 			}))
 			.pipe(rename('main.min.css'))
-			.pipe(gulp.dest(config.dist + '/css'))
+			.pipe(gulp.dest(config.path.dist + '/css'))
 			.on('finish', () => {
-				Tasks.logMsg('css');
+				Tasks.logMsg('css min');
 			});
 
 		done();
@@ -55,10 +61,10 @@ const Tasks = {
 			.pipe(babel({
 				presets: ['@babel/env']
 			}))
-			.pipe(gulp.dest(config.dist + '/js'))
-			.pipe(minify())
+			.pipe(gulp.dest(config.path.dist + '/js'))
 			.pipe(rename('main.min.js'))
-			.pipe(gulp.dest(config.dist + '/js'))
+			.pipe(minify())
+			.pipe(gulp.dest(config.path.dist + '/js'))
 			.on('finish', () => {
 				Tasks.logMsg('js');
 			});
@@ -66,13 +72,13 @@ const Tasks = {
 		done();
 	},
 	taskVendorJs (done) {
-		gulp.src(config.src + '/js/vendors/**/*.js')
+		gulp.src(config.path.src + '/js/vendors/**/*.js')
 			.pipe(plumber())
 			.pipe(concat('vendors.js'))
-			.pipe(gulp.dest(config.dist + '/js'))
+			.pipe(gulp.dest(config.path.dist + '/js'))
 			.pipe(minify())
 			.pipe(rename('vendors.min.js'))
-			.pipe(gulp.dest(config.dist + '/js'))
+			.pipe(gulp.dest(config.path.dist + '/js'))
 			.on('finish', () => {
 				Tasks.logMsg('vendor js');
 			});

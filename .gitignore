@@ -4,3 +4,5 @@ project.sublime-project
 .sublime-gulp.cache
 project.sublime-workspace
 .idea
+htdocs/f/css
+htdocs/f/js
