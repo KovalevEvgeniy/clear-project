@@ -1,16 +1,21 @@
 # Clear project
+
 latest version 1.0.0
 
-#### Install packages
+php ( use includes ), gulp 4, babel js, stylus + nib
+
+## Get started
 ``` js
-    npm i
+git clone https://github.com/KovalevEvgeniy/clear.git .
+npm i
 ```
 
-#### Usage
+## Usage
+##### Build only
 ``` js
-    // build only
-    npm run build
-
-    // build and watch
-    npm run watch
+npm run build
+```
+##### Build and watch
+``` js
+npm run watch
 ```
