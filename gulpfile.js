@@ -59,7 +59,8 @@ const Tasks = {
 			.pipe(plumber())
 			.pipe(concat('main.js'))
 			.pipe(babel({
-				presets: ['@babel/env']
+				presets: ['@babel/env'],
+				plugins: ['transform-object-assign']
 			}))
 			.pipe(gulp.dest(config.path.dist + '/js'))
 			.pipe(rename('main.min.js'))
