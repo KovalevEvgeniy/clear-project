@@ -2,6 +2,6 @@
     <div class="container">
         header
 
-        <? include "/components/menu.php"; ?>
+        <? include $_SERVER['DOCUMENT_ROOT']."/components/menu.php"; ?>
     </div>
 </header>

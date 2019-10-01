@@ -11,8 +11,7 @@
 </head>
 <body>
     <div class="page">
-
-        <? include "/components/header.php"; ?>
+        <? include $_SERVER['DOCUMENT_ROOT']."/components/header.php"; ?>
 
         <main class="main">
             <section class="section">
@@ -22,10 +21,10 @@
             </section>
         </main>
 
-        <? include "/components/footer.php"; ?>
+        <? include $_SERVER['DOCUMENT_ROOT']."/components/footer.php"; ?>
 
     </div>
 
-    <? include "/components/scripts.php"; ?>
+    <? include $_SERVER['DOCUMENT_ROOT']."/components/scripts.php"; ?>
 </body>
 </html>
