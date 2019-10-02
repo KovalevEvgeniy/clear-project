@@ -1,1 +1,6 @@
-console.log('test - 2');
+$(() => {
+	/**
+	 * You custom code
+	 * please, use module creator or object namespaces
+	 **/
+});
