@@ -1,3 +1,2 @@
-<script src="f/js/jquery-3.4.1.min.js"></script>
-<script src="f/js/vendors.js"></script>
-<script src="f/js/main.js"></script>
+<script defer="defer" src="f/js/vendors.min.js"></script>
+<script defer="defer" src="f/js/main.min.js"></script>

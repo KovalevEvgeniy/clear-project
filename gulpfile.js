@@ -69,6 +69,7 @@ const Tasks = {
 	},
 	taskVendorJs (done) {
 		gulp.src([
+			'node_modules/jquery/dist/jquery.min.js',
 			'node_modules/promise-polyfill/dist/polyfill.js',
 			'node_modules/module-creator/dist/jquery.modulecreator.js',
 			config.path.src + '/js/vendors/**/*.js'

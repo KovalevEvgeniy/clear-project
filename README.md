@@ -19,3 +19,6 @@ npm run build
 ``` js
 npm run watch
 ```
+
+## Works
+Please, look at the `gulpfile.js` the beginning of the development. You can remove unused packages from the vendor list.
