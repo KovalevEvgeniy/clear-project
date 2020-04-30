@@ -9,7 +9,7 @@
     "watch": "gulp"
   },
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "module-creator": "git+https://github.com/KovalevEvgeniy/module-creator.git",
     "promise-polyfill": "8.1.3"
   },
